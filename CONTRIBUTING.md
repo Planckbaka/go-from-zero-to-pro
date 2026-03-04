@@ -1,59 +1,85 @@
-# Contributing to Go from Zero to Pro
+# Contributing Guide
 
-Thank you for your interest in contributing! This document provides guidelines for contributions.
+Thanks for your interest in contributing.
 
-## How to Contribute
+This repository is a learning book plus runnable examples for Go. Contributions can be:
+- Documentation: new chapters, fixes, clarifications
+- Examples: runnable code and tests under `examples/`
+- Tooling: CI, scripts, doc build helpers
+- Issue reports: typos, unclear sections, incorrect code, missing coverage
 
-### Reporting Issues
+## Ground rules
+- Be kind and constructive. See `CODE_OF_CONDUCT.md`.
+- Prefer small PRs. One topic per PR.
+- Keep things idiomatic Go. We reference:
+  - Go Code Review Comments: <https://go.dev/wiki/CodeReviewComments>
+  - Google Go Style Guide: <https://google.github.io/styleguide/go/>
 
-- Check if the issue already exists
-- Use a clear, descriptive title
-- Include steps to reproduce (if applicable)
+## Repository layout
+- `docs/`: the book (Markdown)
+- `examples/`: runnable, testable code that supports the book
+- `cmd/`: optional CLI playground and helpers
+- `internal/`: internal-only packages
+- `.github/workflows/`: CI
 
-### Submitting Changes
+See also Go's module layout guidance: <https://go.dev/doc/modules/layout>
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Run checks: `./scripts/check.sh`
-5. Commit your changes (`git commit -m 'feat: add amazing feature'`)
-6. Push to your branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
+## How to contribute
 
-## Development Setup
+### 1) Report an issue
+Open an issue and include:
+- Path and section
+- Expected vs actual
+- Reproduction steps (for code issues)
+- Go version (`go version`) if relevant
 
-```bash
-# Clone your fork
-git clone https://github.com/YOUR_USERNAME/go-from-zero-to-pro.git
-cd go-from-zero-to-pro
+### 2) Make a change
+1. Fork the repo and create a branch:
+   - `docs/<topic>`
+   - `fix/<topic>`
+   - `feat/<topic>`
+2. Make sure code is formatted and tests pass:
+   ```bash
+   gofmt -w .
+   go test ./...
+   ```
+3. If you add or modify an example:
+   - Put code under `examples/<topic>/`
+   - Add at least one test (`*_test.go`) or a runnable `main.go`
+   - Prefer table-driven tests for clarity
+   - Avoid flaky tests
+4. If you add a new chapter:
+   - Add `docs/<NN>-<topic>.md`
+   - Include learning goals, runnable example links, common pitfalls, and optional exercises
+   - Keep chapter titles and numbering consistent
 
-# Install dependencies
-go mod download
+### 3) Commit message conventions
+Use a simple convention:
+- `docs: ...`
+- `examples: ...`
+- `ci: ...`
+- `chore: ...`
+- `fix: ...`
+- `feat: ...`
 
-# Run checks
-./scripts/check.sh
-```
+### 4) Pull request checklist
+Before requesting review:
+- [ ] `gofmt` applied
+- [ ] `go test ./...` passes
+- [ ] Examples updated/added are runnable
+- [ ] Docs are clear and include references when appropriate
+- [ ] No new lints introduced (if CI has lint step)
 
-## Code Style
+## Review process
+Reviewers may reference Go's CodeReviewComments shorthand list:
+<https://go.dev/wiki/CodeReviewComments>
 
-- Follow [Effective Go](https://go.dev/doc/effective_go)
-- Run `gofmt` before committing
-- Add tests for new functionality
-- Update documentation as needed
+Common review topics:
+- Contexts and cancellation
+- Error handling and error strings
+- Goroutine lifetimes
+- Package naming and API clarity
+- Docs and examples quality
 
-## Commit Messages
-
-Use conventional commits:
-
-- `feat:` new feature
-- `fix:` bug fix
-- `docs:` documentation changes
-- `test:` adding/updating tests
-- `refactor:` code refactoring
-- `chore:` maintenance tasks
-
-## Questions?
-
-Open an issue with the `question` label.
-
-Thank you for contributing! 🎉
+## Licensing
+By contributing, you agree that your contributions will be licensed under the repository license.

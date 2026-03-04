@@ -1,42 +1,27 @@
 # Roadmap
 
-## Phase 1: Foundation (Current)
+## Phase 0 - Repo bootstrap
+- [ ] Docs skeleton in `docs/`
+- [ ] CI: `go test`, `gofmt` check
+- [ ] Contributing, Code of Conduct, Security, License
 
-- [x] Project structure
-- [ ] Core documentation (00-05)
-- [ ] Basic examples
-- [ ] CLI tool skeleton
+## Phase 1 - Fundamentals
+- [ ] Basics: types, control flow, functions
+- [ ] Data structures: slices/maps/strings
+- [ ] Errors and idioms
 
-## Phase 2: Advanced Topics
+## Phase 2 - Interfaces and Design
+- [ ] Methods, interfaces, embedding
+- [ ] API design patterns
+- [ ] Generics: when to use and when not to use
 
-- [ ] Advanced concurrency patterns
-- [ ] Error handling best practices
-- [ ] Reflection and generics
-- [ ] CGO basics
+## Phase 3 - Concurrency correctness
+- [ ] Context and cancellation
+- [ ] Worker pools, pipelines, fan-in/out
+- [ ] Race detector and common race patterns
 
-## Phase 3: Tooling & Practices
-
-- [ ] Complete tooling documentation
-- [ ] Testing strategies
-- [ ] Performance optimization guide
-- [ ] Security checklist
-
-## Phase 4: Interactive Learning
-
-- [ ] CLI exercise runner
-- [ ] Progress tracking
-- [ ] Quiz system
-- [ ] Code playground
-
-## Phase 5: Community
-
-- [ ] Contribution guidelines refinement
-- [ ] Community examples
-- [ ] Translations
-- [ ] Video content
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to help!
-
-Pick any item from this roadmap and submit a PR.
+## Phase 4 - Tooling and Production
+- [ ] Modules and dependency management
+- [ ] Testing, fuzzing, benchmarking
+- [ ] Profiling: pprof and trace
+- [ ] Security: govulncheck and common pitfalls

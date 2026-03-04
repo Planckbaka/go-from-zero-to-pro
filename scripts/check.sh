@@ -1,20 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# check.sh - Run all checks locally
-# Usage: ./scripts/check.sh
+go_files=$(find . -type f -name '*.go' -not -path './vendor/*')
 
-set -e
+if [[ -n "$go_files" ]]; then
+  unformatted=$(printf '%s\n' "$go_files" | xargs gofmt -l)
+  if [[ -n "$unformatted" ]]; then
+    echo "These files are not gofmt-formatted:"
+    echo "$unformatted"
+    exit 1
+  fi
+fi
 
-echo "🔧 Running go fmt..."
-go fmt ./...
-
-echo "🔍 Running go vet..."
-go vet ./...
-
-echo "🧪 Running tests..."
-go test ./... -v
-
-echo "📦 Running go build..."
-go build ./...
-
-echo "✅ All checks passed!"
+go test ./...

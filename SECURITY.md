@@ -2,38 +2,28 @@
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| main    | :white_check_mark: |
+This project currently treats the default branch as supported.
+
+| Version | Supported |
+|---------|-----------|
+| main    | Yes       |
 
 ## Reporting a Vulnerability
 
-We take the security of this project seriously.
+Please do not report security vulnerabilities in public issues.
 
-If you discover a security vulnerability, please report it by:
+Report security concerns privately to: `security@your-domain.com`
 
-1. **Do not** open a public issue
-2. Email the maintainer directly (or open a private security advisory on GitHub)
-3. Include:
-   - Description of the vulnerability
-   - Steps to reproduce
-   - Potential impact
-   - Suggested fix (if any)
+Please include:
+- A clear description of the issue
+- Impact assessment
+- Steps to reproduce or proof of concept
+- Suggested remediation (if available)
 
-We will respond within 48 hours and provide a timeline for the fix.
+## Response Process
 
-## Security Best Practices
+- We will acknowledge receipt within 3 business days.
+- We will provide an initial assessment within 7 business days.
+- We will coordinate a fix and disclosure timeline with the reporter.
 
-When contributing code, please follow these guidelines:
-
-- Never commit secrets, API keys, or credentials
-- Use parameterized queries for database operations
-- Validate all user input
-- Use `html/template` for rendering HTML
-- Keep dependencies up to date
-- Run `govulncheck` before submitting PRs
-
-## Resources
-
-- [Go Security Policy](https://go.dev/security)
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+Replace the contact email above with your actual security contact before making the repository public.

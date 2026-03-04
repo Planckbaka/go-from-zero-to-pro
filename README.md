@@ -1,39 +1,33 @@
-# Go from Zero to Pro
+# Go From Zero to Pro
 
-A comprehensive Go learning resource with hands-on examples and interactive exercises.
+A practical, example-driven Go (Golang) learning path from fundamentals to production-grade engineering.
 
-## Overview
+## What you get
+- A structured book in `docs/`
+- Runnable and testable examples in `examples/`
+- A CLI playground in `cmd/z2p` (optional, evolving)
+- Engineering-focused chapters: modules, testing, concurrency correctness, profiling, security
 
-This project is designed to take you from a complete beginner to a proficient Go developer through structured documentation, practical examples, and interactive CLI tools.
-
-## Quick Start
-
+## Quick start
 ```bash
-# Clone the repository
-git clone https://github.com/akiwayne/go-from-zero-to-pro.git
-cd go-from-zero-to-pro
-
-# Run the interactive learning tool
+go version
+go test ./...
 go run ./cmd/z2p
 ```
 
-## Documentation
-
-- [00-intro.md](docs/00-intro.md) - Introduction to Go
-- [01-basics.md](docs/01-basics.md) - Go Basics
-- [02-types.md](docs/02-types.md) - Types and Data Structures
-- [03-functions.md](docs/03-functions.md) - Functions and Methods
-- [04-interfaces.md](docs/04-interfaces.md) - Interfaces and Polymorphism
-- [05-concurrency.md](docs/05-concurrency.md) - Concurrency Patterns
-- [90-tooling.md](docs/90-tooling.md) - Development Tooling
-- [91-testing.md](docs/91-testing.md) - Testing Best Practices
-- [92-performance.md](docs/92-performance.md) - Performance Optimization
-- [93-security.md](docs/93-security.md) - Security Considerations
+## Repository layout
+- `docs/`: learning chapters and project docs
+- `examples/`: chapter-aligned runnable/testable code
+- `cmd/`: executable tools for this repository
+- `internal/`: repository-internal packages
+- `scripts/`: local helper scripts
 
 ## Contributing
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+## Style references
+- Go Code Review Comments: <https://go.dev/wiki/CodeReviewComments>
+- Google Go Style Guide: <https://google.github.io/styleguide/go/>
 
 ## License
-
-This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
+See [LICENSE](./LICENSE).
